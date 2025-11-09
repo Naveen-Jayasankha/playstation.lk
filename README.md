@@ -1,2 +1,0 @@
-# playstation.lk
-my web
