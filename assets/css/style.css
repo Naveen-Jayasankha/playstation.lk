@@ -373,3 +373,22 @@ header h1 {
     display: flex;
   }
 }
+/* === Product Search === */
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-container input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border: 2px solid #1B2A55;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-container input:focus {
+  border-color: #ffc107;
+}
