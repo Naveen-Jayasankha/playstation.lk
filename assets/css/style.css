@@ -522,3 +522,15 @@ header h1 {
   color: #1B2A55;
   font-weight: 600;
 }
+/* === Mobile Responsive Grid === */
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: 1fr; /* stack products vertically */
+    gap: 15px;
+  }
+
+  .product-card {
+    height: auto; /* let card height adjust */
+    padding: 15px;
+  }
+}
