@@ -238,14 +238,65 @@ iframe {
   transform: scale(1.1);
 }
 /* === Logo + Header === */
+/* === Header with Logo === */
 header {
   background-color: #1B2A55;
   color: #fff;
-  padding: 15px 0;
+  padding: 15px 30px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  flex-wrap: wrap;
+}
+
+/* Logo + Name */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-logo {
+  height: 28px; /* Adjusted to match text height */
+  width: auto;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #ffc107;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffc107;
+}
+
+/* Responsive Fix */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-container {
+    margin-bottom: 10px;
+    justify-content: center;
+  }
 }
 
 .logo-container {
