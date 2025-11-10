@@ -40,11 +40,14 @@
   </div>
 
   <div class="product-list" id="productList">
+    <!-- Example Products -->
     <div class="product-card">
       <img src="assets/images/ps4.jpg" alt="Used PS4 Console" />
       <h3>Used PS4 Console</h3>
       <p>Fully serviced, 500GB</p>
       <span>Rs. 85,000</span>
+      <a href="https://wa.me/94767301586?text=Hi!%20I%20want%20to%20order%20Used%20PS4%20Console" 
+         class="order-btn" target="_blank">Order via WhatsApp</a>
     </div>
 
     <div class="product-card">
@@ -52,83 +55,15 @@
       <h3>DualShock 4 Controller</h3>
       <p>Original Sony Controller</p>
       <span>Rs. 12,500</span>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/controller.jpg" alt="DualShock 4 Controller" />
-      <h3>DualShock 4 Controller</h3>
-      <p>Original Sony Controller</p>
-      <span>Rs. 12,500</span>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/controller.jpg" alt="DualShock 4 Controller" />
-      <h3>DualShock 4 Controller</h3>
-      <p>Original Sony Controller</p>
-      <span>Rs. 12,500</span>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/controller.jpg" alt="DualShock 4 Controller" />
-      <h3>DualShock 4 Controller</h3>
-      <p>Original Sony Controller</p>
-      <span>Rs. 12,500</span>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/controller.jpg" alt="DualShock 4 Controller" />
-      <h3>DualShock 4 Controller</h3>
-      <p>Original Sony Controller</p>
-      <span>Rs. 12,500</span>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/controller.jpg" alt="DualShock 4 Controller" />
-      <h3>DualShock 4 Controller</h3>
-      <p>Original Sony Controller</p>
-      <span>Rs. 12,500</span>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/controller.jpg" alt="DualShock 4 Controller" />
-      <h3>DualShock 4 Controller</h3>
-      <p>Original Sony Controller</p>
-      <span>Rs. 12,500</span>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/controller.jpg" alt="DualShock 4 Controller" />
-      <h3>DualShock 4 Controller</h3>
-      <p>Original Sony Controller</p>
-      <span>Rs. 12,500</span>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/controller.jpg" alt="DualShock 4 Controller" />
-      <h3>DualShock 4 Controller</h3>
-      <p>Original Sony Controller</p>
-      <span>Rs. 12,500</span>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/controller.jpg" alt="DualShock 4 Controller" />
-      <h3>DualShock 4 Controller</h3>
-      <p>Original Sony Controller</p>
-      <span>Rs. 12,500</span>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/controller.jpg" alt="DualShock 4 Controller" />
-      <h3>DualShock 4 Controller</h3>
-      <p>Original Sony Controller</p>
-      <span>Rs. 12,500</span>
-    </div>
-    
-
-    <div class="product-card">
-      <img src="assets/images/laptop.jpg" alt="Used Laptop" />
-      <h3>Used HP Laptop</h3>
-      <p>Core i5, 8GB RAM</p>
-      <span>Rs. 115,000</span>
+      <a href="https://wa.me/94767301586?text=Hi!%20I%20want%20to%20order%20DualShock%204%20Controller" 
+         class="order-btn" target="_blank">Order via WhatsApp</a>
     </div>
 
-    <div class="product-card">
-      <img src="assets/images/pc-build.jpg" alt="Custom PC Build" />
-      <h3>Custom PC Build</h3>
-      <p>Gaming ready, Ryzen 5, 16GB RAM</p>
-      <span>Rs. 230,000</span>
-    </div>
+    <!-- Add more products here... total 50+ for pagination -->
   </div>
+
+  <!-- Pagination -->
+  <div class="pagination" id="pagination"></div>
 </section>
 
   <footer>
@@ -154,6 +89,42 @@
       product.style.display = name.includes(query) ? "block" : "none";
     });
   });
+</script>
+<script>
+  const productsPerPage = 50; // 10 rows x 5 columns = 50
+  const productList = document.getElementById('productList');
+  const pagination = document.getElementById('pagination');
+  const productItems = Array.from(productList.children); // renamed from 'products' to 'productItems'
+
+  let currentPage = 1;
+  const totalPages = Math.ceil(productItems.length / productsPerPage);
+
+  function showPage(page) {
+    const start = (page - 1) * productsPerPage;
+    const end = start + productsPerPage;
+
+    productItems.forEach((product, index) => {
+      product.style.display = (index >= start && index < end) ? 'flex' : 'none';
+    });
+
+    renderPagination();
+  }
+
+  function renderPagination() {
+    pagination.innerHTML = '';
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement('button');
+      btn.textContent = i;
+      btn.className = (i === currentPage) ? 'active-page' : '';
+      btn.addEventListener('click', () => {
+        currentPage = i;
+        showPage(currentPage);
+      });
+      pagination.appendChild(btn);
+    }
+  }
+
+  showPage(currentPage);
 </script>
 </body>
 </html>
