@@ -341,3 +341,35 @@ header h1 {
     font-size: 22px;
   }
 }
+/* === Hamburger Menu Styles === */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #ffc107;
+  cursor: pointer;
+}
+
+/* Hide nav on mobile by default */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #1B2A55;
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+
+  nav a {
+    padding: 10px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  nav.active {
+    display: flex;
+  }
+}

@@ -18,7 +18,12 @@
     <h1>PlayStation.lk</h1>
   </div>
 
-  <nav>
+  <!-- Hamburger button -->
+  <div class="menu-toggle" id="menu-toggle">
+    &#9776; <!-- hamburger icon -->
+  </div>
+
+  <nav id="navbar">
     <a href="index.html">Home</a>
     <a href="repairs.html">Repairs</a>
     <a href="shop.html">Shop</a>
@@ -37,5 +42,13 @@
   <footer>
     <p>© 2025 PlayStation.lk | All rights reserved.</p>
   </footer>
+  <script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navbar = document.getElementById("navbar");
+
+  menuToggle.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+  });
+</script>
 </body>
 </html>
