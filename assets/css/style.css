@@ -237,14 +237,13 @@ iframe {
 .whatsapp-btn img:hover {
   transform: scale(1.1);
 }
-/* === Logo + Header === */
-/* === Header with Logo === */
+/* === Header Layout (Logo Left, Nav Right) === */
 header {
   background-color: #1B2A55;
   color: #fff;
-  padding: 15px 30px;
+  padding: 15px 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* logo left, nav right */
   align-items: center;
   flex-wrap: wrap;
 }
@@ -257,7 +256,7 @@ header {
 }
 
 .site-logo {
-  height: 28px; /* Adjusted to match text height */
+  height: 28px; /* same height as text */
   width: auto;
 }
 
@@ -272,7 +271,7 @@ header h1 {
 nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
 }
 
 nav a {
@@ -286,6 +285,20 @@ nav a:hover {
   color: #ffc107;
 }
 
+/* Responsive (for phones) */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 15px 20px;
+  }
+
+  nav {
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+}
 /* Responsive Fix */
 @media (max-width: 700px) {
   header {
