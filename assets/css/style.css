@@ -1,9 +1,10 @@
 /* === Global Styling === */
 body {
-  margin: 0;
+  background-color: #f5f7fa; /* soft light gray-blue */
+  color: #1b1b1b; /* dark text for readability */
   font-family: 'Poppins', sans-serif;
-  background-color: #0d0d0d; /* dark background */
-  color: white;
+  margin: 0;
+  padding: 0;
 }
 
 /* === Header === */
