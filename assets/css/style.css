@@ -593,3 +593,6 @@ header, nav {
 .container, .main-content, .product-list {
   padding: 20px;
 }
+.product-card h3, .product-card p {
+  color: #1b1b1b;
+}
