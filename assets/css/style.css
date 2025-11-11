@@ -395,9 +395,11 @@ header h1 {
 /* === Product Grid === */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   margin-top: 20px;
+  padding: 0 40px; /* ✅ add equal space on left & right */
+  box-sizing: border-box;
 }
 
 .product-card {
@@ -525,12 +527,13 @@ header h1 {
 /* === Mobile Responsive Grid === */
 @media (max-width: 768px) {
   .product-list {
-    grid-template-columns: 1fr; /* stack products vertically */
+    grid-template-columns: 1fr;
     gap: 15px;
+    padding: 0 20px; /* ✅ smaller padding for mobile */
   }
 
   .product-card {
-    height: auto; /* let card height adjust */
+    height: auto;
     padding: 15px;
   }
 }
