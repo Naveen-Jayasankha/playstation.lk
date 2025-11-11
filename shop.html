@@ -38,10 +38,23 @@
   <div class="search-container">
     <input type="text" id="productSearch" placeholder="Search products..." />
   </div>
-
+<!-- 🔽 Filters -->
+<div class="filter-container">
+  <button class="filter-btn active" data-category="all">All</button>
+  <button class="filter-btn" data-category="ps4">PS4</button>
+  <button class="filter-btn" data-category="ps5">PS5</button>
+  <button class="filter-btn" data-category="xbox-360">Xbox 360</button>
+  <button class="filter-btn" data-category="xbox-one">Xbox One</button>
+  <button class="filter-btn" data-category="xbox-one-s">Xbox One S</button>
+  <button class="filter-btn" data-category="laptop">Laptop</button>
+  <button class="filter-btn" data-category="gaming-laptop">Gaming Laptop</button>
+  <button class="filter-btn" data-category="ps4-parts">PS4 Parts</button>
+  <button class="filter-btn" data-category="ps5-parts">PS5 Parts</button>
+  <button class="filter-btn" data-category="xbox-parts">Xbox Parts</button>
+</div>
   <div class="product-list" id="productList">
     <!-- Example Products -->
-    <div class="product-card">
+    <div class="product-card" data-category="ps4">
       <img src="assets/images/ps4.jpg" alt="Used PS4 Console" />
       <h3>Used PS4 Console</h3>
       <p>Fully serviced, 500GB</p>
@@ -49,7 +62,15 @@
       <a href="https://wa.me/94767301586?text=Hi!%20I%20want%20to%20order%20Used%20PS4%20Console" 
          class="order-btn" target="_blank">Order via WhatsApp</a>
     </div>
-    <div class="product-card">
+    <div class="product-card" data-category="ps5">
+      <img src="assets/images/ps4.jpg" alt="Used PS5 Console" />
+      <h3>Used PS4 Console</h3>
+      <p>Fully serviced, 500GB</p>
+      <span>Rs. 85,000</span>
+      <a href="https://wa.me/94767301586?text=Hi!%20I%20want%20to%20order%20Used%20PS4%20Console" 
+         class="order-btn" target="_blank">Order via WhatsApp</a>
+    </div>
+    <div class="product-card"data-category="ps5">
       <img src="assets/images/ps4.jpg" alt="Used PS4 Console" />
       <h3>Used PS4 Console</h3>
       <p>Fully serviced, 500GB</p>
@@ -57,7 +78,7 @@
       <a href="https://wa.me/94767301586?text=Hi!%20I%20want%20to%20order%20Used%20PS4%20Console" 
          class="order-btn" target="_blank">Order via WhatsApp</a>
     </div>
-    <div class="product-card">
+    <div class="product-card"data-category="ps4">
       <img src="assets/images/ps4.jpg" alt="Used PS4 Console" />
       <h3>Used PS4 Console</h3>
       <p>Fully serviced, 500GB</p>
@@ -65,7 +86,7 @@
       <a href="https://wa.me/94767301586?text=Hi!%20I%20want%20to%20order%20Used%20PS4%20Console" 
          class="order-btn" target="_blank">Order via WhatsApp</a>
     </div>
-    <div class="product-card">
+    <div class="product-card"data-category="ps4">
       <img src="assets/images/ps4.jpg" alt="Used PS4 Console" />
       <h3>Used PS4 Console</h3>
       <p>Fully serviced, 500GB</p>
@@ -73,7 +94,7 @@
       <a href="https://wa.me/94767301586?text=Hi!%20I%20want%20to%20order%20Used%20PS4%20Console" 
          class="order-btn" target="_blank">Order via WhatsApp</a>
     </div>
-    <div class="product-card">
+    <div class="product-card"data-category="ps4">
       <img src="assets/images/ps4.jpg" alt="Used PS4 Console" />
       <h3>Used PS4 Console</h3>
       <p>Fully serviced, 500GB</p>
@@ -81,15 +102,7 @@
       <a href="https://wa.me/94767301586?text=Hi!%20I%20want%20to%20order%20Used%20PS4%20Console" 
          class="order-btn" target="_blank">Order via WhatsApp</a>
     </div>
-    <div class="product-card">
-      <img src="assets/images/ps4.jpg" alt="Used PS4 Console" />
-      <h3>Used PS4 Console</h3>
-      <p>Fully serviced, 500GB</p>
-      <span>Rs. 85,000</span>
-      <a href="https://wa.me/94767301586?text=Hi!%20I%20want%20to%20order%20Used%20PS4%20Console" 
-         class="order-btn" target="_blank">Order via WhatsApp</a>
-    </div>
-    <div class="product-card">
+    <div class="product-card"data-category="ps4">
       <img src="assets/images/ps4.jpg" alt="Used PS4 Console" />
       <h3>Used PS4 Console</h3>
       <p>Fully serviced, 500GB</p>
@@ -367,5 +380,29 @@
 
   showPage(currentPage);
 </script>
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const allProducts = document.querySelectorAll('.product-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const category = button.getAttribute('data-category');
+
+      allProducts.forEach(product => {
+        const productCategory = product.getAttribute('data-category');
+        if (category === 'all' || productCategory === category) {
+          product.style.display = 'flex';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
