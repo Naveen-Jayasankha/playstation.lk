@@ -593,6 +593,9 @@ header, nav {
 .container, .main-content, .product-list {
   padding: 20px;
 }
-.product-card h3, .product-card p {
-  color: #1b1b1b;
+/* Fix product price color */
+.product-card p,
+.product-card .price {
+  color: #1b1b1b !important;  /* dark color for visibility */
+  font-weight: 600;
 }
