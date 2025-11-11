@@ -596,6 +596,6 @@ header, nav {
 /* Fix product price color */
 .product-card p,
 .product-card .price {
-  color: #1b1b1b !important;  /* dark color for visibility */
-  font-weight: 600;
+  color: #1B2A55 !important;
+  font-weight: 700;
 }
