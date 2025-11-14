@@ -638,3 +638,14 @@ header, nav {
     height: 450px;
   }
 }
+/* Mobile banner fix */
+@media (max-width: 600px) {
+  .mySwiper {
+    height: 260px !important;   /* increase height */
+  }
+
+  .mySwiper img {
+    object-fit: contain !important;  /* no cropping */
+    background-color: #000;  /* optional - fills empty space */
+  }
+}
