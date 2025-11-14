@@ -6,6 +6,8 @@
   <title>PlayStation.lk | Repairs & Sales</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <a href="https://wa.me/94767301586?text=Hi!%20I%20want%20to%20inquire%20about%20repairs%20or%20products" 
    class="whatsapp-btn" target="_blank">
@@ -30,6 +32,52 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
+  <!-- ===== Slideshow Banner Start ===== -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+            <img src="assets/images/banner1.jpg" alt="PlayStation Repairs Banner">
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+            <img src="assets/images/banner2.jpg" alt="Gaming Accessories Banner">
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+            <img src="assets/images/banner3.jpg" alt="Laptop Sales Banner">
+        </div>
+
+    </div>
+
+    <!-- Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- Dots -->
+    <div class="swiper-pagination"></div>
+</div>
+<!-- ===== Slideshow Banner End ===== -->
+ <script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 </header>
 
   <section class="hero">
@@ -50,5 +98,7 @@
     navbar.classList.toggle("active");
   });
 </script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
